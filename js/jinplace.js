@@ -344,7 +344,7 @@
 		 */
 		onUpdate: function(editor, opts, data) {
 			var self = this;
-			if opts["attribute"] {
+			if (opts["attribute"]) {
 				self.setContent(data[opts["attribute"]]);
 			} else {
 				self.setContent(data);
