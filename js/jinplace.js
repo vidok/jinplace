@@ -344,7 +344,11 @@
 		 */
 		onUpdate: function(editor, opts, data) {
 			var self = this;
-			self.setContent(data);
+			if opts["attribute"] {
+				self.setContent(data[opts["attribute"]]);
+			} else {
+				self.setContent(data);
+			}
 			editor.finish();
 			self.bindElement(opts);
 		},
@@ -710,4 +714,3 @@
 		}
 	};
 })(jQuery, window, document);
-
